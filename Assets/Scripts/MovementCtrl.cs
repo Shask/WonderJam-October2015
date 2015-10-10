@@ -5,6 +5,7 @@ public class MovementCtrl : MonoBehaviour {
     public float stepSize = 2.5f;
     public float moveTime = 1;
     public short lane = 4;
+    public float centerOffset = 0.5f;
     public string movementOrientation = "Horizontal";
 
     public float CooldownTimeBetweenLaneSwitch = 0.2f;
@@ -54,7 +55,7 @@ public class MovementCtrl : MonoBehaviour {
         float pos = movementOrientation == "Horizontal" ? gameObject.transform.position.x : gameObject.transform.position.y;
         if (side == "negative")
         {
-            if (pos <= - max)
+            if (pos <= -max + centerOffset / 2)
             {
                 return false;
             }
@@ -65,7 +66,7 @@ public class MovementCtrl : MonoBehaviour {
         }
         else
         {
-            if (pos >= max)
+            if (pos >= max + centerOffset / 2)
             {
                 return false;
             }
