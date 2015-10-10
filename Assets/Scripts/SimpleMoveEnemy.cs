@@ -44,7 +44,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
             seen = true;
 
         if (seen && !GetComponent<Renderer>().isVisible && timerdestroy == -1.0f)
-            timerdestroy = 2.0f;
+            DestroyByOutofSight();
 
         //timer is finished -> destroy the object
         if (timerdestroy < 0.0f && timerdestroy!= -1.0f)
@@ -53,8 +53,9 @@ public class SimpleMoveEnemy : MonoBehaviour {
 
     public void  DestroyedByPlayer()
     {
-        timerdestroy = 2.0f;
         scoreManager.Hit();
+        //TODO Feed back succes
+        Destroy(gameObject);
     }
     void DestroyByOutofSight()
     {

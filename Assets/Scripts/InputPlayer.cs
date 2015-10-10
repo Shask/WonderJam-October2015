@@ -45,27 +45,32 @@ public class InputPlayer : MonoBehaviour {
                 if(Input.GetButtonDown(enemyID.input))
                 {
                     //bon input
-                    scoreManager.Hit();
-                    enemy.GetComponent<SimpleMoveEnemy>().DestroyByBadinput();
+                    enemy.GetComponent<SimpleMoveEnemy>().DestroyedByPlayer();
+                    Debug.Log("Enemy hit");
+                    EnemyOnRange.RemoveAt(0);
                 }
                 else
                 {
+                    enemy.GetComponent<SimpleMoveEnemy>().DestroyByBadinput();
                     Debug.Log("Wrong input");
+                    EnemyOnRange.RemoveAt(0);
                     //mauvaise input
                 }
             }
         }
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("Coucou");
         if(collision.gameObject.tag =="Enemy")
         {
             EnemyOnRange.Add(collision.gameObject); 
         }
     }
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collision)
     {
+        Debug.Log("Goodbye");
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyOnRange.Remove(collision.gameObject);

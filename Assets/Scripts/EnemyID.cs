@@ -11,7 +11,7 @@ public class EnemyID : MonoBehaviour {
         random = new System.Random();
 
         //generate a random input to kill it
-        input = "Fire"+ random.Next(0,4);
+        input = "Fire1";//+ random.Next(0,4);
 	
 	}
 	
