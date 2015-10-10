@@ -15,8 +15,8 @@ public class DamierLoader : MonoBehaviour {
         timer = 1.0f / (BPM / 60.0f);
 
 
-        float y = -21.5f;
-        while(y<15.0f)
+        float y = -14f;
+        while(y<11.0f)
         { 
             GameObject go = (GameObject)Instantiate(Resources.Load("FlippableDamier"), new Vector3(-1.0f, y, 0.0f),new Quaternion());
             go.transform.parent = transform;
@@ -33,8 +33,8 @@ public class DamierLoader : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
        
+
     }
     void FixedUpdate()
     {
