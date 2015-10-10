@@ -12,6 +12,7 @@ GameObject:
   - 65: {fileID: 6573458}
   - 23: {fileID: 2339278}
   - 114: {fileID: 11493578}
+  - 114: {fileID: 11478576}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 1.25, z: 0}
+  m_LocalPosition: {x: -3.5, y: 4.6500001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,11 +70,23 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147558}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02465606, y: 2.28267002, z: 1}
+  m_Center: {x: .00194182096, y: -1.38887501, z: 0}
+--- !u!114 &11478576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8cb4c57e8449947b0405728a806de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CDShoot: .200000003
 --- !u!114 &11493578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,7 +103,7 @@ MonoBehaviour:
   lane: 4
   centerOffset: .5
   movementOrientation: Horizontal
-  jumpHeight: .200000003
+  jumpHeight: .300000012
   CooldownTimeBetweenLaneSwitch: .200000003
 --- !u!1001 &100100000
 Prefab:
