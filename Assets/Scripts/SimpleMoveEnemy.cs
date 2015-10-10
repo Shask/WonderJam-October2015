@@ -51,7 +51,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
             Destroy(gameObject);
     }
 
-    void DestroyedByPlayer()
+    public void  DestroyedByPlayer()
     {
         timerdestroy = 2.0f;
         scoreManager.Hit();
@@ -60,5 +60,12 @@ public class SimpleMoveEnemy : MonoBehaviour {
     {
         timerdestroy = 2.0f;
         scoreManager.MissEnemy();
+    }
+
+    public void DestroyByBadinput()
+    {
+        //Change color + play a sound TODO
+        Destroy(gameObject);
+        scoreManager.WrongInput();
     }
 }

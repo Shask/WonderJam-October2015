@@ -8,7 +8,14 @@ public class InputPlayer : MonoBehaviour {
     // Use this for initialization
 
     private ScoreManager scoreManager;
+
+    public float CDShoot = 0.2f; //CoolDown between every fire input
+    private float TimerShoot = 0.0f; //current timer between fire input
+
+
 	void Start () {
+
+       
 
         RangeBox = GetComponent<BoxCollider>();
         EnemyOnRange = new ArrayList();
@@ -17,12 +24,17 @@ public class InputPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2") || Input.GetButtonDown("Fire3") || Input.GetButtonDown("Fire4"))
+
+        if (TimerShoot >= 0.0f)
+            TimerShoot -= Time.deltaTime;
+
+        if ((Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2") || Input.GetButtonDown("Fire3") || Input.GetButtonDown("Fire4")) && TimerShoot<=0.0f)
         {
-            if(EnemyOnRange.Count == 0)
+            TimerShoot = CDShoot;
+            if (EnemyOnRange.Count == 0)
             {
                 scoreManager.MissEnemy();
+                Debug.Log("No enemy on range");
             }
             else
             {
@@ -33,9 +45,12 @@ public class InputPlayer : MonoBehaviour {
                 if(Input.GetButtonDown(enemyID.input))
                 {
                     //bon input
+                    scoreManager.Hit();
+                    enemy.GetComponent<SimpleMoveEnemy>().DestroyByBadinput();
                 }
                 else
                 {
+                    Debug.Log("Wrong input");
                     //mauvaise input
                 }
             }

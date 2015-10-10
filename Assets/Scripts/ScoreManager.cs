@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -10,13 +11,13 @@ public class ScoreManager : MonoBehaviour {
     public int succesStrike = 0;
 
 
-    private TextMesh ScoreObj;
-    private TextMesh ComboObj;
+    private Text ScoreObj;
+    private Text ComboObj;
     
 	// Use this for initialization
 	void Start () {
-        ScoreObj = GameObject.Find("Score").GetComponent<TextMesh>();
-        ComboObj = GameObject.Find("Combo").GetComponent<TextMesh>();
+        ScoreObj = GameObject.Find("Score").GetComponent<Text>();
+        ComboObj = GameObject.Find("Combo").GetComponent<Text>();
     }
 	
 	// Update is called once per frame
@@ -44,7 +45,12 @@ public class ScoreManager : MonoBehaviour {
         combo = 1;
         UpdateUI();
     }
-
+    public void WrongInput()
+    {
+        combo = 1;
+        succesStrike = 0;
+        UpdateUI();
+    }
 
    private void ComboManager()
     {
