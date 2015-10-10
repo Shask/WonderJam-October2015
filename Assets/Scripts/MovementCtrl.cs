@@ -6,24 +6,32 @@ public class MovementCtrl : MonoBehaviour {
     private float moveTime = 1;
     private short lane = 4;
 
+    public float CooldownTimeBetweenLaneSwitch = 0.2f;
+    private float CDMove = 0.0f;
 
     // Use this for initialization
     void Start () {
+
     }
 	
 	void Update ()
     {
-        if (Input.GetAxis("Horizontal")==-1 && checkBound("left"))
+        if (CDMove >= 0.0f)
+            CDMove -= Time.deltaTime;
+
+        if (Input.GetAxis("Horizontal")<0 && checkBound("left") && CDMove<=0.0f)
         {
             Vector3 end = new Vector3(gameObject.transform.position.x - stepSize, gameObject.transform.position.y, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
+            CDMove = CooldownTimeBetweenLaneSwitch;
         }
-        if (Input.GetAxis("Horizontal") == 1 && checkBound("right"))
+        if (Input.GetAxis("Horizontal") >0 && checkBound("right") && CDMove <= 0.0f)
         {
             Vector3 end = new Vector3(gameObject.transform.position.x + stepSize, gameObject.transform.position.y, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
+            CDMove = CooldownTimeBetweenLaneSwitch;
         }
     }
 
