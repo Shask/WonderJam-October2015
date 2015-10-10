@@ -615,6 +615,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32d67d6b01409ba40b9601cae9297f17, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &838481122
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.89999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493578, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: CooldownTimeBetweenLaneSwitch
+      value: .25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &905884788
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1891689699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -946,11 +992,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSize: 2.5
-  moveTime: 1
+  moveTime: .0799999982
   lane: 4
   centerOffset: .5
   movementOrientation: Horizontal
-  CooldownTimeBetweenLaneSwitch: .300000012
+  jumpHeight: .200000003
+  CooldownTimeBetweenLaneSwitch: .200000003
 --- !u!114 &1891689705
 MonoBehaviour:
   m_ObjectHideFlags: 0
