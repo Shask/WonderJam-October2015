@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestScript : MonoBehaviour {
+
+public class TestScript : MonoBehaviour, AudioProcessor.AudioCallbacks
+{
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +14,13 @@ public class TestScript : MonoBehaviour {
 	void Update () {
 	
 	}
+    public void onOnbeatDetected()
+    {
+        Debug.Log("Beat!!!");
+    }
+
+    public void onSpectrum(float[] spectrum)
+    {
+
+    }
 }
