@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MovementCtrl : MonoBehaviour {
-    private float stepSize = 2;
+    private float stepSize = 2.5f;
     private float moveTime = 1;
     private short lane = 4;
 
@@ -13,15 +13,15 @@ public class MovementCtrl : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Input.GetKeyDown("a") && checkBound("left"))
+        if (Input.GetAxis("Horizontal")==-1 && checkBound("left"))
         {
-            Vector3 end = new Vector3(gameObject.transform.position.x - stepSize, 0, 0);
+            Vector3 end = new Vector3(gameObject.transform.position.x - stepSize, gameObject.transform.position.y, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
         }
-        if (Input.GetKeyDown("d") && checkBound("right"))
+        if (Input.GetAxis("Horizontal") == 1 && checkBound("right"))
         {
-            Vector3 end = new Vector3(gameObject.transform.position.x + stepSize, 0, 0);
+            Vector3 end = new Vector3(gameObject.transform.position.x + stepSize, gameObject.transform.position.y, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
         }

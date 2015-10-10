@@ -8,7 +8,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
 
     public float scaleSpeed = 3.0f;
 
-    private float timerdestroy = 0.0f;
+    public float timerdestroy = -1.0f;
 
     private AudioSystem audioSys;
     private ScoreManager scoreManager;
@@ -24,7 +24,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (timerdestroy < 0.0f)
+        if (timerdestroy > 0.0f)
             timerdestroy -= Time.deltaTime;
 
         Vector3 scale = transform.localScale;
@@ -43,11 +43,11 @@ public class SimpleMoveEnemy : MonoBehaviour {
         if (GetComponent<Renderer>().isVisible)
             seen = true;
 
-        if (seen && !GetComponent<Renderer>().isVisible)
+        if (seen && !GetComponent<Renderer>().isVisible && timerdestroy == -1.0f)
             timerdestroy = 2.0f;
 
         //timer is finished -> destroy the object
-        if (timerdestroy < 0.0f)
+        if (timerdestroy < 0.0f && timerdestroy!= -1.0f)
             Destroy(gameObject);
     }
 
