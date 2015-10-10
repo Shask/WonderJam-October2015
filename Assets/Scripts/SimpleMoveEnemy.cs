@@ -6,13 +6,17 @@ public class SimpleMoveEnemy : MonoBehaviour {
     public float speed = 3.0f;
     public bool seen = false;
 
+    public float scaleSpeed = 3.0f;
+
     private float timerdestroy = 0.0f;
 
+    private AudioSystem audioSys;
 
 
     // Use this for initialization
     void Start()
     {
+        audioSys = GameObject.Find("Audio System").GetComponent<AudioSystem>();
     }
 
     // Update is called once per frame
@@ -21,7 +25,9 @@ public class SimpleMoveEnemy : MonoBehaviour {
         if (timerdestroy < 0.0f)
             timerdestroy -= Time.deltaTime;
 
-
+        Vector3 scale = transform.localScale;
+        scale = new Vector3(1,1,1) * (1+audioSys.debugvalue);
+        transform.localScale = scale;
 
         float t = Time.deltaTime;
         Vector3 pos = transform.position;
