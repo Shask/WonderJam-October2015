@@ -23,14 +23,14 @@ public class MovementCtrl : MonoBehaviour {
 
         float stepX = movementOrientation == "Horizontal" ? stepSize: 0;
         float stepY = movementOrientation == "Vertical" ? stepSize : 0;
-        if (Input.GetAxis(movementOrientation) == -1 && checkBound("negative") && CDMove <= 0.0f)
+        if (Input.GetAxis(movementOrientation) < 0.0f && checkBound("negative") && CDMove <= 0.0f)
         {
             Vector3 end = new Vector3(gameObject.transform.position.x - stepX, gameObject.transform.position.y - stepY, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
             CDMove = CooldownTimeBetweenLaneSwitch;
         }
-        if (Input.GetAxis(movementOrientation) == 1 && checkBound("positive") && CDMove <= 0.0f)
+        if (Input.GetAxis(movementOrientation)>0.0f  && checkBound("positive") && CDMove <= 0.0f)
         {
             Vector3 end = new Vector3(gameObject.transform.position.x + stepX, gameObject.transform.position.y + stepY, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
