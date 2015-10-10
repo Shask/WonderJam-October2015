@@ -852,10 +852,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSize: 2.5
-  moveTime: 1
+  moveTime: .200000003
   lane: 4
   centerOffset: .5
   movementOrientation: Horizontal
+  jumpHeight: .200000003
   CooldownTimeBetweenLaneSwitch: .300000012
 --- !u!114 &1891689705
 MonoBehaviour:

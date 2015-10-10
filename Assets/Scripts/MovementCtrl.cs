@@ -8,7 +8,8 @@ public class MovementCtrl : MonoBehaviour {
     public float centerOffset = 0.5f;
     public string movementOrientation = "Horizontal";
     public float jumpHeight = 0.2f;
-    private float i = 0;
+
+    private float animateIndex = 0;
     private Vector3 animationEndPos, animationStartPos;
     private short moveDirection = 0;
 
@@ -19,7 +20,7 @@ public class MovementCtrl : MonoBehaviour {
     void Start () {
 
     }
-	
+
 	void FixedUpdate ()
     {
         if (CDMove >= 0.0f)
@@ -28,16 +29,17 @@ public class MovementCtrl : MonoBehaviour {
         float stepX = movementOrientation == "Horizontal" ? stepSize: 0;
         float stepY = movementOrientation == "Vertical" ? stepSize : 0;
         if (moveDirection == 0)
-        {
-            animationStartPos = gameObject.transform.position;
+        {            
             if (Input.GetAxis(movementOrientation) < -0.2f && checkBound("negative") && CDMove <= 0.0f)
             {
+                animationStartPos = gameObject.transform.position;
                 moveDirection = -1;
                 animationEndPos = new Vector3(gameObject.transform.position.x - stepX, gameObject.transform.position.y - stepY, gameObject.transform.position.z);
                 MoveObjects(animationStartPos, animationEndPos);
             }
             if (Input.GetAxis(movementOrientation) > 0.2f && checkBound("positive") && CDMove <= 0.0f)
             {
+                animationStartPos = gameObject.transform.position;
                 moveDirection = 1;
                 animationEndPos = new Vector3(gameObject.transform.position.x + stepX, gameObject.transform.position.y + stepY, gameObject.transform.position.z);
                 MoveObjects(animationStartPos, animationEndPos);
@@ -45,9 +47,9 @@ public class MovementCtrl : MonoBehaviour {
         }
         else
         {
-            if (i >= 1)
+            if (animateIndex >= 1)
             {
-                i = 0;
+                animateIndex = 0;
                 moveDirection = 0;
                 gameObject.transform.position = animationEndPos;
                 CDMove = CooldownTimeBetweenLaneSwitch;
@@ -63,15 +65,15 @@ public class MovementCtrl : MonoBehaviour {
     {
         float rate = 1 / moveTime;
         Vector3 midPos = new Vector3((startPos.x + endPos.x) / 2, jumpHeight + (startPos.y + endPos.y) / 2, 0);
-        if (i < 0.5f)
+        if (animateIndex < 0.5f)
         {
-            i += Time.deltaTime * rate;
-            transform.position = Vector3.Slerp(startPos, midPos, i);print("up");print(Time.time);
+            animateIndex += Time.deltaTime * rate;
+            transform.position = Vector3.Slerp(startPos, midPos, animateIndex);print("up");print(Time.time);
         }
-        else if (i < 1)
+        else if (animateIndex < 1)
         {
-            i += Time.deltaTime * rate;
-            transform.position = Vector3.Slerp(startPos, endPos, Mathf.SmoothStep(0, 1, i));print("down");
+            animateIndex += Time.deltaTime * rate;
+            transform.position = Vector3.Slerp(startPos, endPos, Mathf.SmoothStep(0, 1, animateIndex));print("down");
         }
 
     }
