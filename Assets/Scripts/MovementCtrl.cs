@@ -68,12 +68,12 @@ public class MovementCtrl : MonoBehaviour {
         if (animateIndex < 0.5f)
         {
             animateIndex += Time.deltaTime * rate;
-            transform.position = Vector3.Slerp(startPos, midPos, animateIndex);print("up");print(Time.time);
+            transform.position = Vector3.Slerp(startPos, midPos, animateIndex);
         }
         else if (animateIndex < 1)
         {
             animateIndex += Time.deltaTime * rate;
-            transform.position = Vector3.Slerp(startPos, endPos, Mathf.SmoothStep(0, 1, animateIndex));print("down");
+            transform.position = Vector3.Slerp(startPos, endPos, Mathf.SmoothStep(0, 1, animateIndex));
         }
 
     }
