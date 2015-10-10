@@ -11,12 +11,14 @@ public class SimpleMoveEnemy : MonoBehaviour {
     private float timerdestroy = 0.0f;
 
     private AudioSystem audioSys;
+    private ScoreManager scoreManager;
 
 
     // Use this for initialization
     void Start()
     {
         audioSys = GameObject.Find("Audio System").GetComponent<AudioSystem>();
+        scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -47,5 +49,16 @@ public class SimpleMoveEnemy : MonoBehaviour {
         //timer is finished -> destroy the object
         if (timerdestroy < 0.0f)
             Destroy(gameObject);
+    }
+
+    void DestroyedByPlayer()
+    {
+        timerdestroy = 2.0f;
+        scoreManager.Hit();
+    }
+    void DestroyByOutofSight()
+    {
+        timerdestroy = 2.0f;
+        scoreManager.MissEnemy();
     }
 }
