@@ -46,13 +46,13 @@ public class InputPlayer : MonoBehaviour {
                 {
                     //bon input
                     enemy.GetComponent<SimpleMoveEnemy>().DestroyedByPlayer();
-                    Debug.Log("Enemy hit");
+                   // Debug.Log("Enemy hit");
                     EnemyOnRange.RemoveAt(0);
                 }
                 else
                 {
                     enemy.GetComponent<SimpleMoveEnemy>().DestroyByBadinput();
-                    Debug.Log("Wrong input");
+                  //  Debug.Log("Wrong input");
                     EnemyOnRange.RemoveAt(0);
                     //mauvaise input
                 }
@@ -62,7 +62,7 @@ public class InputPlayer : MonoBehaviour {
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Coucou");
+       // Debug.Log("Coucou");
         if(collision.gameObject.tag =="Enemy")
         {
             EnemyOnRange.Add(collision.gameObject); 
@@ -70,7 +70,7 @@ public class InputPlayer : MonoBehaviour {
     }
     void OnTriggerExit(Collider collision)
     {
-        Debug.Log("Goodbye");
+       // Debug.Log("Goodbye");
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyOnRange.Remove(collision.gameObject);

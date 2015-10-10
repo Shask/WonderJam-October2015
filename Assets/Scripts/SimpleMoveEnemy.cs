@@ -17,6 +17,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+       // gameObject.renderer.sortingLayerName = "";
         audioSys = GameObject.Find("Audio System").GetComponent<AudioSystem>();
         scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
     }
