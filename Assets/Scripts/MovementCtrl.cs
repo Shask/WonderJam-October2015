@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class MovementCtrl : MonoBehaviour {
-    private float stepSize = 2.5f;
-    private float moveTime = 1;
-    private short lane = 4;
+    public float stepSize = 2.5f;
+    public float moveTime = 1;
+    public short lane = 4;
 
     public float CooldownTimeBetweenLaneSwitch = 0.2f;
     private float CDMove = 0.0f;
