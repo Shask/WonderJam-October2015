@@ -5,6 +5,7 @@ public class MovementCtrl : MonoBehaviour {
     public float stepSize = 2.5f;
     public float moveTime = 1;
     public short lane = 4;
+    public string movementOrientation = "Horizontal";
 
     public float CooldownTimeBetweenLaneSwitch = 0.2f;
     private float CDMove = 0.0f;
@@ -19,16 +20,18 @@ public class MovementCtrl : MonoBehaviour {
         if (CDMove >= 0.0f)
             CDMove -= Time.deltaTime;
 
-        if (Input.GetAxis("Horizontal")<0 && checkBound("left") && CDMove<=0.0f)
+        float stepX = movementOrientation == "Horizontal" ? stepSize: 0;
+        float stepY = movementOrientation == "Vertical" ? stepSize : 0;
+        if (Input.GetAxis(movementOrientation) == -1 && checkBound("negative") && CDMove <= 0.0f)
         {
-            Vector3 end = new Vector3(gameObject.transform.position.x - stepSize, gameObject.transform.position.y, gameObject.transform.position.z);
+            Vector3 end = new Vector3(gameObject.transform.position.x - stepX, gameObject.transform.position.y - stepY, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
             CDMove = CooldownTimeBetweenLaneSwitch;
         }
-        if (Input.GetAxis("Horizontal") >0 && checkBound("right") && CDMove <= 0.0f)
+        if (Input.GetAxis(movementOrientation) == 1 && checkBound("positive") && CDMove <= 0.0f)
         {
-            Vector3 end = new Vector3(gameObject.transform.position.x + stepSize, gameObject.transform.position.y, gameObject.transform.position.z);
+            Vector3 end = new Vector3(gameObject.transform.position.x + stepX, gameObject.transform.position.y + stepY, gameObject.transform.position.z);
             MoveObjects(gameObject.transform.position, end);
             gameObject.transform.position = end;
             CDMove = CooldownTimeBetweenLaneSwitch;
@@ -48,9 +51,10 @@ public class MovementCtrl : MonoBehaviour {
     bool checkBound(string side)
     {
         float max = stepSize * (lane - 1) / 2;
-        if (side == "left")
+        float pos = movementOrientation == "Horizontal" ? gameObject.transform.position.x : gameObject.transform.position.y;
+        if (side == "negative")
         {
-            if (gameObject.transform.position.x <= - max)
+            if (pos <= - max)
             {
                 return false;
             }
@@ -61,7 +65,7 @@ public class MovementCtrl : MonoBehaviour {
         }
         else
         {
-            if (gameObject.transform.position.x >= max)
+            if (pos >= max)
             {
                 return false;
             }
