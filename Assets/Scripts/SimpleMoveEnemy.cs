@@ -25,7 +25,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
 
         float t = Time.deltaTime;
         Vector3 pos = transform.position;
-        pos.y -= t * speed;
+        pos.y += t * speed;
         transform.position = pos;
 
         if (GetComponent<Renderer>().isVisible)

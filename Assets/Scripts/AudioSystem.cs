@@ -44,7 +44,7 @@ public class AudioSystem : MonoBehaviour {
             GameObject ChosenspawnLocation = spawnList[random.Next(0, spawnList.Length)];
             Instantiate(Enemy, ChosenspawnLocation.transform.position, ChosenspawnLocation.transform.rotation);
             cooldown =  1.0f / (BPM / 60.0f);
-            cooldown = cooldown * 2;
+            cooldown = cooldown * 2.0f;
         }
     }
 }
