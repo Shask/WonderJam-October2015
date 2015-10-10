@@ -556,7 +556,7 @@ Prefab:
       objectReference: {fileID: 1887012719}
     - target: {fileID: 11430600, guid: 32d67d6b01409ba40b9601cae9297f17, type: 2}
       propertyPath: BPM
-      value: 260
+      value: 130
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32d67d6b01409ba40b9601cae9297f17, type: 2}
@@ -780,11 +780,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1891689698}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.02465582, y: 2.91807461, z: 1}
-  m_Center: {x: .00194182061, y: -.907197416, z: 0}
+  m_Size: {x: 1.02465582, y: 2.2826705, z: 1}
+  m_Center: {x: .00194182061, y: -1.38887465, z: 0}
 --- !u!23 &1891689700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -852,9 +852,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSize: 2.5
-  moveTime: 1
+  moveTime: .200000003
   lane: 4
+  centerOffset: .5
   movementOrientation: Horizontal
+  jumpHeight: .200000003
   CooldownTimeBetweenLaneSwitch: .300000012
 --- !u!114 &1891689705
 MonoBehaviour:

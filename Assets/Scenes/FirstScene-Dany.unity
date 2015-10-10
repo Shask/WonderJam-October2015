@@ -85,7 +85,7 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &523540480
+--- !u!1001 &1119222187
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -94,7 +94,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 439002, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 439002, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -124,7 +124,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 480612, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2103698090
@@ -187,7 +192,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.81026363
+  orthographic size: 2.10760713
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -208,7 +213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103698090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 1.25, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
