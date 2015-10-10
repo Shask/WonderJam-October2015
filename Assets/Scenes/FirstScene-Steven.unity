@@ -556,7 +556,7 @@ Prefab:
       objectReference: {fileID: 1887012719}
     - target: {fileID: 11430600, guid: 32d67d6b01409ba40b9601cae9297f17, type: 2}
       propertyPath: BPM
-      value: 260
+      value: 130
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32d67d6b01409ba40b9601cae9297f17, type: 2}
