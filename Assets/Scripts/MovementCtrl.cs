@@ -35,14 +35,12 @@ public class MovementCtrl : MonoBehaviour {
                 moveDirection = -1;
                 animationEndPos = new Vector3(gameObject.transform.position.x - stepX, gameObject.transform.position.y - stepY, gameObject.transform.position.z);
                 MoveObjects(animationStartPos, animationEndPos);
-                //CDMove = CooldownTimeBetweenLaneSwitch;
             }
             if (Input.GetAxis(movementOrientation) > 0.2f && checkBound("positive") && CDMove <= 0.0f)
             {
                 moveDirection = 1;
                 animationEndPos = new Vector3(gameObject.transform.position.x + stepX, gameObject.transform.position.y + stepY, gameObject.transform.position.z);
                 MoveObjects(animationStartPos, animationEndPos);
-                //CDMove = CooldownTimeBetweenLaneSwitch;
             }
         }
         else
@@ -52,12 +50,11 @@ public class MovementCtrl : MonoBehaviour {
                 i = 0;
                 moveDirection = 0;
                 gameObject.transform.position = animationEndPos;
-                //CDMove = CooldownTimeBetweenLaneSwitch;
+                CDMove = CooldownTimeBetweenLaneSwitch;
             }
             else
             {
                 MoveObjects(animationStartPos, animationEndPos);
-                //CDMove = CooldownTimeBetweenLaneSwitch;
             }
         }
     }
