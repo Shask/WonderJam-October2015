@@ -9,6 +9,8 @@ public class AudioSystem : MonoBehaviour {
     public GameObject[] spawnList; //spawn list
     public GameObject Enemy; //Enemy prefab
 
+    private DamierLoader damLoad;
+
     public float cooldown = 0.0f;//cooldown in between enemy spawn
 
 
@@ -22,22 +24,37 @@ public class AudioSystem : MonoBehaviour {
 
     public float debugvalue;
 
+    private float timerBPM;
+
     private System.Random random;
 
 	// Use this for initialization
 	void Start () {
-       
+        damLoad = GameObject.Find("FullDamier").GetComponent<DamierLoader>();
         random = new System.Random();
+        timerBPM = 1.0f / (BPM / 60.0f);
+
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
 
-        
+        if (timerBPM > 0.0f)
+            timerBPM -= Time.deltaTime;
+       if (timerBPM <= 0.0f)
+       {
+            damLoad.switchDamier();
+            timerBPM = 1.0f / (BPM / 60.0f);
+       }
+
         if (cooldown > 0.0f)
             cooldown -= Time.deltaTime;
+
         debugvalue = samples[frequency];
         AudioListener.GetSpectrumData(samples, 0, fftWindow);
+
+
+            
 
         if (samples[frequency] > spawnThreshold && cooldown<=0.0f)
         {

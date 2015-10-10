@@ -16,7 +16,7 @@ public class DamierLoader : MonoBehaviour {
 
 
         float y = -14f;
-        while(y<11.0f)
+        while(y<15.0f)
         { 
             GameObject go = (GameObject)Instantiate(Resources.Load("FlippableDamier"), new Vector3(-1.0f, y, 0.0f),new Quaternion());
             go.transform.parent = transform;
@@ -38,21 +38,25 @@ public class DamierLoader : MonoBehaviour {
     }
     void FixedUpdate()
     {
-        if (timer > 0.0f)
+        /*if (timer > 0.0f)
             timer -= Time.deltaTime;
         if (timer <= 0.0f)
         {
-            Material MDam1 = Dam1[0].GetComponent<Renderer>().material;
-            Material MDam2 = Dam2[0].GetComponent<Renderer>().material;
-            foreach (GameObject damier in Dam1)
-            {
-                damier.GetComponent<Renderer>().material = MDam2;
-            }
-            foreach (GameObject damier in Dam2)
-            {
-                damier.GetComponent<Renderer>().material = MDam1;
-            }
+           
             timer = 1.0f / (BPM / 60.0f);
+        }*/
+    }
+    public void switchDamier()
+    {
+        Material MDam1 = Dam1[0].GetComponent<Renderer>().material;
+        Material MDam2 = Dam2[0].GetComponent<Renderer>().material;
+        foreach (GameObject damier in Dam1)
+        {
+            damier.GetComponent<Renderer>().material = MDam2;
+        }
+        foreach (GameObject damier in Dam2)
+        {
+            damier.GetComponent<Renderer>().material = MDam1;
         }
     }
 }
