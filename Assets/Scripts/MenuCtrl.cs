@@ -18,6 +18,8 @@ public class MenuCtrl : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+
         difficultyOutput = GameObject.Find("Difficulty Output").GetComponent<Text>();
         difficultySlider = GameObject.Find("Difficulty").GetComponent<Slider>();
         playButton = GameObject.Find("Play").GetComponent<Button>();
