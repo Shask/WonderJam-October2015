@@ -28,6 +28,7 @@ public class ScoreManager : MonoBehaviour {
 
     public void Hit()
     {
+        Debug.Log("hit");
         score += 100 * combo;
         succesStrike++;
         ComboManager();
@@ -45,6 +46,7 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log("Desyncro");
         if(combo>1)
         combo -= 1;
+        succesStrike = 0;
         UpdateUI();
     }
     public void WrongInput()
@@ -54,12 +56,15 @@ public class ScoreManager : MonoBehaviour {
         UpdateUI();
     }
 
-   private void ComboManager()
+    private void ComboManager()
     {
         //increase the combo score every time the player do a succes strike of 3
-        if (succesStrike % 3 == 1 && combo<=5)
+        if (succesStrike % 3 == 1 && combo < 5)
+        { 
             combo++;
-       
+        succesStrike = 0;
+        }
+
     }
 
     private void UpdateUI()

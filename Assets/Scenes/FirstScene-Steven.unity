@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3365904b0d4d7458a27fd2093390e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSpeed: 0
 --- !u!4 &357282243 stripped
 Transform:
   m_PrefabParentObject: {fileID: 469668, guid: de66a844e1cf6254da8a6c0015689a29, type: 2}
@@ -599,6 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3365904b0d4d7458a27fd2093390e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSpeed: 0
 --- !u!65 &427087262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1589,6 +1591,10 @@ Prefab:
     - target: {fileID: 472928, guid: f3375b76a01e79546a8d84d733ffbc49, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424024, guid: f3375b76a01e79546a8d84d733ffbc49, type: 2}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3375b76a01e79546a8d84d733ffbc49, type: 2}
