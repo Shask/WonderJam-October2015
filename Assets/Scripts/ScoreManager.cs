@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour {
 
         InitialComboObjfont = ComboObj.fontSize;
         InitialScoreObjfont = ScoreObj.fontSize;
-        CDResetCol = 2 / (130 / 60);
+        CDResetCol = 2 / (SceneSetup.BPM / 60);
 
     }
 	

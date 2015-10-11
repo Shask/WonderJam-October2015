@@ -4981,6 +4981,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11442822, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22447510, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5055,11 +5059,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22442748, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22430194, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448556, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
       propertyPath: m_Text
@@ -5071,6 +5075,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11472006, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
       propertyPath: m_Text
+      value: Pale
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442822, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442822, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133370, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
+      propertyPath: m_Name
+      value: Fonce
+      objectReference: {fileID: 0}
+    - target: {fileID: 119244, guid: 7f8f776fd63120f42b90fd7268b6b721, type: 2}
+      propertyPath: m_Name
       value: Pale
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class DamierFlipper : MonoBehaviour {
-  /*  public int BPM = 130;
+  /*  public int BPM = 
+  ;
 
     private GameObject[] Dam1;
     private GameObject[] Dam2;

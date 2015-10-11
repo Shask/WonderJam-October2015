@@ -5,7 +5,6 @@ using System;
 public class AudioSystem : MonoBehaviour {
 
 
-    public int BPM = 130; //beat per minute 
     public GameObject[] spawnList; //spawn list
     public GameObject Enemy; //Enemy prefab
 
@@ -25,16 +24,16 @@ public class AudioSystem : MonoBehaviour {
 
     public float debugvalue;
 
-    private float timerBPM;
+    public float timerBPM=130;
 
     private System.Random random;
 
 	// Use this for initialization
-	void Start () {
+	void Start () { 
         damLoad = GameObject.Find("FullDamier").GetComponent<DamierLoader>();
         floorRythm = GameObject.Find("RythmBoxes").GetComponent<FloorRythm>();
         random = new System.Random();
-        timerBPM = 1.0f / (BPM / 60.0f);
+        timerBPM = 1.0f / (130/ 60.0f);
 
         Debug.Log(MenuCtrl.FinalDifficulty);
 
@@ -49,7 +48,7 @@ public class AudioSystem : MonoBehaviour {
        {
             damLoad.switchDamier();
             floorRythm.switchLane();
-            timerBPM = 1.0f / (BPM / 60.0f);
+            timerBPM = 1.0f / (130 / 60.0f);
        }
 
         if (cooldown > 0.0f)
@@ -65,7 +64,7 @@ public class AudioSystem : MonoBehaviour {
         {
             GameObject ChosenspawnLocation = spawnList[random.Next(0, spawnList.Length)];
             Instantiate(Enemy, ChosenspawnLocation.transform.position, ChosenspawnLocation.transform.rotation);
-            cooldown =  1.0f / (BPM / 60.0f);
+            cooldown =  1.0f / (130 / 60.0f);
             cooldown = cooldown * 2.0f;
         }
     }

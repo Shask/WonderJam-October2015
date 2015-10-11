@@ -7,7 +7,8 @@ public class MenuCtrl : MonoBehaviour
 {
     private Text difficultyOutput;
     public static string FinalDifficulty = "Tutoriel";
-    private String[] difficultyLevels = { "Tutoriel", "Facile", "Moyen", "Difficile" };
+    public static String[] difficultyLevels = { "Tutoriel", "Moyen", "Difficile", "HardCore" };
+    public static bool isPale;
     private Slider difficultySlider;
     private Button playButton;
 
@@ -23,7 +24,7 @@ public class MenuCtrl : MonoBehaviour
         difficultyOutput = GameObject.Find("Difficulty Output").GetComponent<Text>();
         difficultySlider = GameObject.Find("Difficulty").GetComponent<Slider>();
         playButton = GameObject.Find("Play").GetComponent<Button>();
-
+        isPale = GameObject.Find("Pale").GetComponent<Toggle>().isOn;
         playButton.Select();
     }
 

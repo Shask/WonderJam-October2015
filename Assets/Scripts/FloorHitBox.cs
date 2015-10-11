@@ -67,6 +67,6 @@ public class FloorHitBox : MonoBehaviour {
         if (scoreManager.LongestTimeOnBadTempo < timer)
             scoreManager.LongestTimeOnBadTempo = timer;
         scoreManager.TimeOnbadTempo += timer;
-        return (1.0f / (audioSys.BPM / 60.0f))/1.41f;
+        return (1.0f / (SceneSetup.BPM / 60.0f))/1.41f;
     }
 }
