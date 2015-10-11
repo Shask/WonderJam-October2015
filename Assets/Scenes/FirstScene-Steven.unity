@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b29e24488af145b76d013f4eb4440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
 --- !u!65 &989104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -557,6 +558,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.26310921, y: 9.04676819, z: -.51033783}
   m_Center: {x: .124655455, y: .329549998, z: -.355240434}
+--- !u!95 &545015900
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545015892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37e47ab2e87aa554aa1e7ce6a10986ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &627724041
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b29e24488af145b76d013f4eb4440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
 --- !u!65 &642124902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1082,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b29e24488af145b76d013f4eb4440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
 --- !u!65 &1518349071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1146,6 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b29e24488af145b76d013f4eb4440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
 --- !u!65 &1527549157
 BoxCollider:
   m_ObjectHideFlags: 0
