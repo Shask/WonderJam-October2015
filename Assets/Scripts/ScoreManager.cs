@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour {
     public static float TimeOnbadTempo = 0.0f;
     public static float LongestTimeOnBadTempo = 0.0f;
     public static int MaxComboReached = 0;
+    public static int landedHit = 0;
     // public int LongestStreak = 0;
 
     public static bool isGameOver = false;
@@ -100,6 +101,7 @@ public class ScoreManager : MonoBehaviour {
         ComboManager();
         UpdateUI(1,0);
         NumberDestroyedPixel++;
+        landedHit++;
     }
   public void MissEnemy()
     {
