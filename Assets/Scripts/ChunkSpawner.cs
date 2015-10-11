@@ -20,7 +20,7 @@ public class ChunkSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        CurrentMusicSpeed = 30.0f * audioSys.debugvalue;
+        CurrentMusicSpeed = 50.0f * audioSys.debugvalue;
     /*    if(timer>0.0f)
         {
             timer -= Time.deltaTime;

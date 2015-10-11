@@ -10,6 +10,14 @@ public class ScoreManager : MonoBehaviour {
 
     public int succesStrike = 0;
 
+    public int NumberDestroyedPixel = 0;
+    public int NumberunDestroyedPixel = 0;
+    public int NumberMissedButton = 0;
+    public float TimeOnbadTempo = 0.0f;
+    public float LongestTimeOnBadTempo = 0.0f;
+    public int MaxComboReached = 0;
+   // public int LongestStreak = 0;
+
 
     private float timerResetScoreCol;
     private float timerResetComboCol;
@@ -76,12 +84,14 @@ public class ScoreManager : MonoBehaviour {
         succesStrike++;
         ComboManager();
         UpdateUI(1,0);
+        NumberDestroyedPixel++;
     }
   public void MissEnemy()
     {
         combo = 1;
         succesStrike = 0;
         UpdateUI(0,-1);
+        NumberMissedButton++;
     }
 
     public void MissPlacement()
@@ -101,6 +111,7 @@ public class ScoreManager : MonoBehaviour {
         combo = 1;
         succesStrike = 0;
         UpdateUI(0,-1);
+        NumberMissedButton++;
     }
 
     private void ComboManager()
@@ -140,6 +151,9 @@ public class ScoreManager : MonoBehaviour {
             ComboObj.color = Color.red;
             timerResetComboCol = CDResetCol;
         }
+
+        if (combo > MaxComboReached)
+            MaxComboReached = combo;
 
     }
 }
