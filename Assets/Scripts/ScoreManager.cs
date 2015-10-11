@@ -20,9 +20,11 @@ public class ScoreManager : MonoBehaviour {
     private Text ComboObj;
 
 
-    private static Text InitialScoreObj;
-    private static Text InitialComboObj;
-   
+    private Color InitialScoreObjColor;
+    private Color InitialComboObjColor;
+    private int InitialScoreObjfont;
+    private int InitialComboObjfont;
+
 
     private int SpeedFontSize = 30;
 
@@ -31,9 +33,11 @@ public class ScoreManager : MonoBehaviour {
     void Start () {
         ScoreObj = GameObject.Find("Score").GetComponent<Text>();
         ComboObj = GameObject.Find("Combo").GetComponent<Text>();
-        InitialComboObj =ComboObj;
-        InitialScoreObj = ScoreObj;
- 
+        InitialComboObjColor = ComboObj.color;
+        InitialScoreObjColor=  ScoreObj.color;
+
+        InitialComboObjfont = ComboObj.fontSize;
+        InitialScoreObjfont = ScoreObj.fontSize;
         CDResetCol = 2 / (130 / 60);
 
     }
@@ -47,19 +51,19 @@ public class ScoreManager : MonoBehaviour {
         if (timerResetComboCol > 0.0f)
             timerResetComboCol -= Time.deltaTime;
 
-        if (ComboObj.fontSize != InitialComboObj.fontSize)
+        if (ComboObj.fontSize != InitialComboObjfont)
             ComboObj.fontSize = (int) (ComboObj.fontSize - (SpeedFontSize * Time.deltaTime));
 
         
-        if (ScoreObj.fontSize != InitialScoreObj.fontSize)
+        if (ScoreObj.fontSize != InitialScoreObjfont)
             ScoreObj.fontSize = (int)(ScoreObj.fontSize -SpeedFontSize * Time.deltaTime);
 
-        if (timerResetScoreCol <= 0.0f && ScoreObj.color != InitialScoreObj.color)
-            ScoreObj.color = InitialScoreObj.color;
+        if (timerResetScoreCol <= 0.0f && ScoreObj.color != InitialScoreObjColor)
+            ScoreObj.color = InitialScoreObjColor;
 
 
-        if (timerResetComboCol <= 0.0f && ComboObj.color != InitialComboObj.color)
-            ComboObj.color = InitialComboObj.color;
+        if (timerResetComboCol <= 0.0f && ComboObj.color != InitialComboObjColor)
+            ComboObj.color = InitialComboObjColor;
 
 
     }
@@ -117,22 +121,22 @@ public class ScoreManager : MonoBehaviour {
         ComboObj.text = "x" + combo;
 
         if(Score == 1) {
-            ScoreObj.fontSize = InitialScoreObj.fontSize + 20;
+            ScoreObj.fontSize = InitialScoreObjfont + 20;
         }
         
         if (Score == -1) {
-            ScoreObj.fontSize = InitialScoreObj.fontSize + 20;
+            ScoreObj.fontSize = InitialScoreObjfont + 20;
             ScoreObj.color = Color.red;
             timerResetScoreCol = CDResetCol;
         }
         //Turn Red
         if (Combo == 1) {
-            ComboObj.fontSize = InitialComboObj.fontSize + 20;
+            ComboObj.fontSize = InitialComboObjfont + 20;
             ComboObj.color = Color.green;
             timerResetComboCol = CDResetCol;
         }
         if (Combo == -1) {
-            ComboObj.fontSize = InitialComboObj.fontSize + 20;
+            ComboObj.fontSize = InitialComboObjfont + 20;
             ComboObj.color = Color.red;
             timerResetComboCol = CDResetCol;
         }
