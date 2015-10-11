@@ -9,18 +9,22 @@ public class FloorHitBox : MonoBehaviour {
     private bool overlaping = false;
     private AudioSystem audioSys;
     private ScoreManager scoreManager;
+    private int BPM;
 
+  
 	// Use this for initialization
 	void Start () {
         DangerTag = transform.parent.GetComponent<FloorRythm>().DangerTag;
         audioSys = GameObject.Find("Audio System").GetComponent<AudioSystem>();
         scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
-
+        BPM = 130;// GameObject.Find("Main Camera").GetComponent<SceneSetup>().BPM;
 
     }
 
     // Update is called once per frame
     void Update () {
+        if (BPM < 60 || BPM > 190)
+            BPM=GameObject.Find("Main Camera").GetComponent<SceneSetup>().BPM;
 
         if (overlaping )
         {
@@ -67,6 +71,6 @@ public class FloorHitBox : MonoBehaviour {
         if (ScoreManager.LongestTimeOnBadTempo < timer)
             ScoreManager.LongestTimeOnBadTempo = timer;
         ScoreManager.TimeOnbadTempo += timer;
-        return (1.0f / (audioSys.BPM / 60.0f))/1.41f;
+        return (1.0f / (BPM/ 60.0f))/1.41f;
     }
 }

@@ -6,12 +6,14 @@ public class DamierLoader : MonoBehaviour {
     private GameObject[] Dam1;
     private GameObject[] Dam2;
 
-
+    public int BPM=130;
     private float timer;
+   
     // Use this for initialization
     void Start () {
-
-        timer = 1.0f / (SceneSetup.BPM / 60.0f);
+        
+    //BPM = GameObject.Find("Main Camera").GetComponent<SceneSetup>().BPM;
+        timer = 1.0f / (BPM / 60.0f);
 
 
         float y = -14f;

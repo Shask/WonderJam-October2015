@@ -3,7 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
+    public int BPM;
 
+   
 
     public static int score = 0;
     public int combo = 1;
@@ -41,6 +43,7 @@ public class ScoreManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        BPM = 130;// GameObject.Find("Main Camera").GetComponent<SceneSetup>().BPM;
         ScoreObj = GameObject.Find("Score").GetComponent<Text>();
         ComboObj = GameObject.Find("Combo").GetComponent<Text>();
         InitialComboObjColor = ComboObj.color;
@@ -48,7 +51,7 @@ public class ScoreManager : MonoBehaviour {
 
         InitialComboObjfont = ComboObj.fontSize;
         InitialScoreObjfont = ScoreObj.fontSize;
-        CDResetCol = 2 / (SceneSetup.BPM / 60);
+        CDResetCol = 2 / (BPM / 60);
 
         if (isGameOver)
         {

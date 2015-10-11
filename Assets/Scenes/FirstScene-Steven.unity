@@ -242,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
 --- !u!114 &7184397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b379a9ce2fd5f947af298c57cd09b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BPM: 0
   songs:
   - {fileID: 8300000, guid: c393cc29d51caae4d8bb574d2e2d2d86, type: 3}
   - {fileID: 8300000, guid: 8b52eeccb3d474049a8c41597a636928, type: 3}
@@ -439,7 +440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &45550666
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +607,7 @@ Transform:
   - {fileID: 1687208238}
   - {fileID: 965247585}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &427087261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &642124899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,15 +1490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30d7f924755a204297d2d6db76dd789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  BPM: 0
   combo: 1
-  succesStrike: 0
-  NumberDestroyedPixel: 0
-  NumberunDestroyedPixel: 0
-  NumberMissedButton: 0
-  TimeOnbadTempo: 0
-  LongestTimeOnBadTempo: 0
-  MaxComboReached: 0
   CDResetCol: 0
 --- !u!4 &965247585 stripped
 Transform:
@@ -2146,6 +2140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47509c8f27c5508428d9144bf7c7b3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BPM: 0
 --- !u!4 &1591104963
 Transform:
   m_ObjectHideFlags: 0
@@ -2600,7 +2595,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1891689698
 GameObject:
   m_ObjectHideFlags: 0
