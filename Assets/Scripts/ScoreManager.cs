@@ -8,13 +8,13 @@ public class ScoreManager : MonoBehaviour {
     public static int score = 0;
     public int combo = 1;
 
-    public int succesStrike = 0;
+    public static int succesStrike = 0;
 
     public static int NumberDestroyedPixel = 0;
     public static int NumberunDestroyedPixel = 0;
     public static int NumberMissedButton = 0;
-    public static float TimeOnbadTempo = 0.0f; //
-    public static float LongestTimeOnBadTempo = 0.0f; //
+    public static float TimeOnbadTempo = 0.0f;
+    public static float LongestTimeOnBadTempo = 0.0f;
     public static int MaxComboReached = 0;
     // public int LongestStreak = 0;
 

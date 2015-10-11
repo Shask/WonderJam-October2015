@@ -150,7 +150,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Combos reussis:'
+  m_Text: 'Meilleur combo: X'
 --- !u!222 &963635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Mauvaise  Rythmique:'
+  m_Text: 'Rythmique:'
 --- !u!222 &444432328
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -159, y: 63}
+  m_AnchoredPosition: {x: -180, y: 63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &739168743
@@ -872,7 +872,7 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -159, y: 0}
+  m_AnchoredPosition: {x: -180, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1015181067
@@ -958,7 +958,7 @@ GameObject:
   - 222: {fileID: 1080313113}
   - 114: {fileID: 1080313112}
   m_Layer: 5
-  m_Name: Combo Fail
+  m_Name: Landed Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +978,7 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -159, y: -63}
+  m_AnchoredPosition: {x: -180, y: -63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1080313112
@@ -1084,7 +1084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Pire  Rythmique:'
+  m_Text: 'Coups:'
 --- !u!222 &1108843115
 CanvasRenderer:
   m_ObjectHideFlags: 0
