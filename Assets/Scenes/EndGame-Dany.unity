@@ -1248,7 +1248,7 @@ GameObject:
   - 222: {fileID: 1323272287}
   - 114: {fileID: 1323272286}
   m_Layer: 5
-  m_Name: Wrong attack
+  m_Name: Wrong Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

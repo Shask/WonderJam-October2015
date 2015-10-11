@@ -10,13 +10,15 @@ public class ScoreManager : MonoBehaviour {
 
     public int succesStrike = 0;
 
-    public static int NumberDestroyedPixel = 0; //
-    public static int NumberunDestroyedPixel = 0; //
-    public static int NumberMissedButton = 0; //
-    public static float TimeOnbadTempo = 0.0f;
-    public static float LongestTimeOnBadTempo = 0.0f;
-    public static int MaxComboReached = 0; //
-   // public int LongestStreak = 0;
+    public static int NumberDestroyedPixel = 0;
+    public static int NumberunDestroyedPixel = 0;
+    public static int NumberMissedButton = 0;
+    public static float TimeOnbadTempo = 0.0f; //
+    public static float LongestTimeOnBadTempo = 0.0f; //
+    public static int MaxComboReached = 0;
+    // public int LongestStreak = 0;
+
+    public static bool isGameOver = false;
 
 
     private float timerResetScoreCol;
@@ -39,8 +41,6 @@ public class ScoreManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        DontDestroyOnLoad(this);
-
         ScoreObj = GameObject.Find("Score").GetComponent<Text>();
         ComboObj = GameObject.Find("Combo").GetComponent<Text>();
         InitialComboObjColor = ComboObj.color;
@@ -50,8 +50,9 @@ public class ScoreManager : MonoBehaviour {
         InitialScoreObjfont = ScoreObj.fontSize;
         CDResetCol = 2 / (130 / 60);
 
-        if (false) //new game
+        if (isGameOver)
         {
+            score = 0;
             NumberDestroyedPixel = 0;
             NumberunDestroyedPixel = 0;
             NumberMissedButton = 0;
@@ -103,9 +104,10 @@ public class ScoreManager : MonoBehaviour {
         succesStrike = 0;
         UpdateUI(0,-1);
         NumberMissedButton++;
-    }
+        NumberunDestroyedPixel++;
+}
 
-    public void MissPlacement()
+public void MissPlacement()
     {
         Debug.Log("Desyncro");
         if(combo>1)
