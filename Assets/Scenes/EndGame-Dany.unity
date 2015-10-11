@@ -447,12 +447,12 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 2
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '% Rythmique:'
+  m_Text: 'Mauvaise  Rythmique:'
 --- !u!222 &444432328
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -470,6 +470,8 @@ GameObject:
   - 223: {fileID: 669260426}
   - 114: {fileID: 669260425}
   - 114: {fileID: 669260424}
+  - 114: {fileID: 669260427}
+  - 114: {fileID: 669260428}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -563,6 +565,28 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &669260427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669260422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f95d9afe71f1b429d3bad5f0cf4dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &669260428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669260422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd1efb4a46de674d9a507d50d45b8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &739168741
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +618,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -208, y: 63}
+  m_AnchoredPosition: {x: -159, y: 63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &739168743
@@ -1026,7 +1050,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 350, y: 63}
+  m_AnchoredPosition: {x: -350, y: -63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1108843114
@@ -1055,12 +1079,12 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 2
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Combos echoue:'
+  m_Text: Pire  Rythmique
 --- !u!222 &1108843115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1328,7 +1352,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 2
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
@@ -1388,7 +1412,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -350, y: -63}
+  m_AnchoredPosition: {x: 350, y: 63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1882940346
@@ -1422,7 +1446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '% Maladresse:'
+  m_Text: 'Maladresse:'
 --- !u!222 &1882940347
 CanvasRenderer:
   m_ObjectHideFlags: 0

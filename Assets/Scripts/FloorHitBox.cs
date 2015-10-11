@@ -64,9 +64,9 @@ public class FloorHitBox : MonoBehaviour {
     //return the the time between every Beat divided by 2;
     float ResetTimer()
     {
-        if (scoreManager.LongestTimeOnBadTempo < timer)
-            scoreManager.LongestTimeOnBadTempo = timer;
-        scoreManager.TimeOnbadTempo += timer;
+        if (ScoreManager.LongestTimeOnBadTempo < timer)
+            ScoreManager.LongestTimeOnBadTempo = timer;
+        ScoreManager.TimeOnbadTempo += timer;
         return (1.0f / (audioSys.BPM / 60.0f))/1.41f;
     }
 }

@@ -5,17 +5,17 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
 
-    public int score = 0;
+    public static int score = 0;
     public int combo = 1;
 
     public int succesStrike = 0;
 
-    public int NumberDestroyedPixel = 0;
-    public int NumberunDestroyedPixel = 0;
-    public int NumberMissedButton = 0;
-    public float TimeOnbadTempo = 0.0f;
-    public float LongestTimeOnBadTempo = 0.0f;
-    public int MaxComboReached = 0;
+    public static int NumberDestroyedPixel = 0;
+    public static int NumberunDestroyedPixel = 0;
+    public static int NumberMissedButton = 0;
+    public static float TimeOnbadTempo = 0.0f;
+    public static float LongestTimeOnBadTempo = 0.0f;
+    public static int MaxComboReached = 0;
    // public int LongestStreak = 0;
 
 
@@ -48,7 +48,16 @@ public class ScoreManager : MonoBehaviour {
         InitialScoreObjfont = ScoreObj.fontSize;
         CDResetCol = 2 / (130 / 60);
 
-    }
+        if (false) //new game
+        {
+            NumberDestroyedPixel = 0;
+            NumberunDestroyedPixel = 0;
+            NumberMissedButton = 0;
+            TimeOnbadTempo = 0.0f;
+            LongestTimeOnBadTempo = 0.0f;
+            MaxComboReached = 0;
+        }
+}
 	
 	// Update is called once per frame
 	void Update () {
