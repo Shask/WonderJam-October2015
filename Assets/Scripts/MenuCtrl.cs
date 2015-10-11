@@ -8,8 +8,7 @@ public class MenuCtrl : MonoBehaviour
     private Text difficultyOutput;
     private String[] difficultyLevels = { "Tutoriel", "Facile", "Moyen", "Difficile" };
     private Slider difficultySlider;
-    private Button playButton, introButton, quitButton;
-    private Toggle darkToggle, lightToggle;
+    private Button playButton;
 
     void FixedUpdate()
     {
@@ -22,10 +21,6 @@ public class MenuCtrl : MonoBehaviour
         difficultyOutput = GameObject.Find("Difficulty Output").GetComponent<Text>();
         difficultySlider = GameObject.Find("Difficulty").GetComponent<Slider>();
         playButton = GameObject.Find("Play").GetComponent<Button>();
-        introButton = GameObject.Find("Intro").GetComponent<Button>();
-        quitButton = GameObject.Find("Quit").GetComponent<Button>();
-        darkToggle = GameObject.Find("Color 0").GetComponent<Toggle>();
-        lightToggle = GameObject.Find("Color 1").GetComponent<Toggle>();
 
         playButton.Select();
     }
