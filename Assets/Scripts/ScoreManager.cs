@@ -10,12 +10,12 @@ public class ScoreManager : MonoBehaviour {
 
     public int succesStrike = 0;
 
-    public static int NumberDestroyedPixel = 0;
-    public static int NumberunDestroyedPixel = 0;
-    public static int NumberMissedButton = 0;
+    public static int NumberDestroyedPixel = 0; //
+    public static int NumberunDestroyedPixel = 0; //
+    public static int NumberMissedButton = 0; //
     public static float TimeOnbadTempo = 0.0f;
     public static float LongestTimeOnBadTempo = 0.0f;
-    public static int MaxComboReached = 0;
+    public static int MaxComboReached = 0; //
    // public int LongestStreak = 0;
 
 
@@ -39,6 +39,8 @@ public class ScoreManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        DontDestroyOnLoad(this);
+
         ScoreObj = GameObject.Find("Score").GetComponent<Text>();
         ComboObj = GameObject.Find("Combo").GetComponent<Text>();
         InitialComboObjColor = ComboObj.color;
