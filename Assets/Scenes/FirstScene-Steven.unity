@@ -1475,6 +1475,7 @@ MonoBehaviour:
   score: 0
   combo: 1
   succesStrike: 0
+  CDResetCol: 0
 --- !u!4 &965247585 stripped
 Transform:
   m_PrefabParentObject: {fileID: 472928, guid: f3375b76a01e79546a8d84d733ffbc49, type: 2}
@@ -2824,7 +2825,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 491824, guid: 7887baa618b2e1a49a11ab0d09a9a4b9, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2385666, guid: 7887baa618b2e1a49a11ab0d09a9a4b9, type: 2}
       propertyPath: m_Enabled

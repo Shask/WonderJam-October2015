@@ -13,6 +13,8 @@ public class SimpleMoveEnemy : MonoBehaviour {
     public AudioSystem audioSys;
     private ScoreManager scoreManager;
 
+    public GameObject[] KillOk;
+
 
     // Use this for initialization
     void Start()
@@ -55,6 +57,11 @@ public class SimpleMoveEnemy : MonoBehaviour {
     public void  DestroyedByPlayer()
     {
         scoreManager.Hit();
+        Vector3 posParti = transform.position;
+        posParti.z -= 2;
+        int i = GetComponent<EnemyID>().EnemyType;
+        GameObject go = (GameObject) Instantiate(KillOk[i-1], posParti, transform.rotation);
+        go.GetComponent<ParticleSystem>().Play();
         //TODO Feed back succes
         Destroy(gameObject);
     }

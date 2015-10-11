@@ -11,19 +11,58 @@ public class ScoreManager : MonoBehaviour {
     public int succesStrike = 0;
 
 
+    private float timerResetScoreCol;
+    private float timerResetComboCol;
+
+    public float CDResetCol;
+
     private Text ScoreObj;
     private Text ComboObj;
-    
-	// Use this for initialization
-	void Start () {
+
+
+    private static Text InitialScoreObj;
+    private static Text InitialComboObj;
+   
+
+    private int SpeedFontSize = 30;
+
+
+    // Use this for initialization
+    void Start () {
         ScoreObj = GameObject.Find("Score").GetComponent<Text>();
         ComboObj = GameObject.Find("Combo").GetComponent<Text>();
+        InitialComboObj =ComboObj;
+        InitialScoreObj = ScoreObj;
+ 
+        CDResetCol = 2 / (130 / 60);
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+        if (timerResetScoreCol > 0.0f)
+            timerResetScoreCol -= Time.deltaTime;
+
+        if (timerResetComboCol > 0.0f)
+            timerResetComboCol -= Time.deltaTime;
+
+        if (ComboObj.fontSize != InitialComboObj.fontSize)
+            ComboObj.fontSize = (int) (ComboObj.fontSize - (SpeedFontSize * Time.deltaTime));
+
+        
+        if (ScoreObj.fontSize != InitialScoreObj.fontSize)
+            ScoreObj.fontSize = (int)(ScoreObj.fontSize -SpeedFontSize * Time.deltaTime);
+
+        if (timerResetScoreCol <= 0.0f && ScoreObj.color != InitialScoreObj.color)
+            ScoreObj.color = InitialScoreObj.color;
+
+
+        if (timerResetComboCol <= 0.0f && ComboObj.color != InitialComboObj.color)
+            ComboObj.color = InitialComboObj.color;
+
+
+    }
 
 
     public void Hit()
@@ -32,28 +71,32 @@ public class ScoreManager : MonoBehaviour {
         score +=( 100 * combo);
         succesStrike++;
         ComboManager();
-        UpdateUI();
+        UpdateUI(1,0);
     }
   public void MissEnemy()
     {
         combo = 1;
         succesStrike = 0;
-        UpdateUI();
+        UpdateUI(0,-1);
     }
 
     public void MissPlacement()
     {
         Debug.Log("Desyncro");
         if(combo>1)
-        combo -= 1;
+        {
+            combo -= 1;
+            UpdateUI(0, -1);
+        }
+        
         succesStrike = 0;
-        UpdateUI();
+        
     }
     public void WrongInput()
     {
         combo = 1;
         succesStrike = 0;
-        UpdateUI();
+        UpdateUI(0,-1);
     }
 
     private void ComboManager()
@@ -63,13 +106,36 @@ public class ScoreManager : MonoBehaviour {
         { 
           combo++;
           succesStrike = 0;
+          UpdateUI(0, 1);
         }
 
     }
 
-    private void UpdateUI()
+    private void UpdateUI(int Score,int Combo)
     {
         ScoreObj.text = "Score : " + score;
         ComboObj.text = "x" + combo;
+
+        if(Score == 1) {
+            ScoreObj.fontSize = InitialScoreObj.fontSize + 20;
+        }
+        
+        if (Score == -1) {
+            ScoreObj.fontSize = InitialScoreObj.fontSize + 20;
+            ScoreObj.color = Color.red;
+            timerResetScoreCol = CDResetCol;
+        }
+        //Turn Red
+        if (Combo == 1) {
+            ComboObj.fontSize = InitialComboObj.fontSize + 20;
+            ComboObj.color = Color.green;
+            timerResetComboCol = CDResetCol;
+        }
+        if (Combo == -1) {
+            ComboObj.fontSize = InitialComboObj.fontSize + 20;
+            ComboObj.color = Color.red;
+            timerResetComboCol = CDResetCol;
+        }
+
     }
 }

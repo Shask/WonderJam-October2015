@@ -106,6 +106,12 @@ MonoBehaviour:
   seen: 0
   scaleSpeed: 3
   timerdestroy: -1
+  audioSys: {fileID: 0}
+  KillOk:
+  - {fileID: 165008, guid: 8691778014d577e48b4dede2af630bc0, type: 2}
+  - {fileID: 170156, guid: f28ac468721999248ae6b1ab1543edca, type: 2}
+  - {fileID: 120612, guid: ef13185775fd84b48b8166886487a2a5, type: 2}
+  - {fileID: 134854, guid: 02258efb9efeb4d41b901680bffa81b6, type: 2}
 --- !u!114 &11454542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +129,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: af3290b989ef00d4e8a4ea2052d80b1d, type: 2}
   - {fileID: 2100000, guid: 910239d9ccd141f44bd3b3e0ae227b7a, type: 2}
   - {fileID: 2100000, guid: fa162dcb55659d94cbeb84a3f2f7e1ef, type: 2}
+  EnemyType: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
