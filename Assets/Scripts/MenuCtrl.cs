@@ -10,6 +10,13 @@ public class MenuCtrl : MonoBehaviour
     private Slider difficultySlider;
     private Button playButton, introButton, quitButton;
     private Toggle darkToggle, lightToggle;
+    private Selectable[] menuControls;
+    private int menuControlsIndex = 0;
+
+    void FixedUpdate()
+    {
+        //collectGamepadInput();
+    }
 
     void Start()
     {
@@ -22,6 +29,8 @@ public class MenuCtrl : MonoBehaviour
         lightToggle = GameObject.Find("Color 1").GetComponent<Toggle>();
 
         playButton.Select();
+
+        menuControls = new Selectable[] { playButton, difficultySlider, darkToggle, lightToggle, introButton, quitButton };
     }
 
     public void Exit()
@@ -32,5 +41,17 @@ public class MenuCtrl : MonoBehaviour
     public void AdjustDifficulty()
     {
         difficultyOutput.text = difficultyLevels[(int)difficultySlider.value];
+    }
+
+    private void collectGamepadInput()
+    {
+        if (Input.GetAxis("Vertical") < -0.5f)
+        {
+            if (menuControlsIndex == 0)
+            {
+                menuControlsIndex = menuControls.Length;print("asd");
+            }
+            menuControls[--menuControlsIndex].Select();
+        }
     }
 }
