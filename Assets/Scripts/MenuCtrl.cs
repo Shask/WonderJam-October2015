@@ -10,7 +10,6 @@ public class MenuCtrl : MonoBehaviour
     private Slider difficultySlider;
     private Button playButton, introButton, quitButton;
     private Toggle darkToggle, lightToggle;
-    private Selectable[] menuControls;
 
     void FixedUpdate()
     {
@@ -29,8 +28,6 @@ public class MenuCtrl : MonoBehaviour
         lightToggle = GameObject.Find("Color 1").GetComponent<Toggle>();
 
         playButton.Select();
-
-        menuControls = new Selectable[] { playButton, difficultySlider, darkToggle, lightToggle, introButton, quitButton };
     }
 
     public void Exit()
