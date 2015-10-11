@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour {
     public void Hit()
     {
         Debug.Log("hit");
-        score += 100 * combo;
+        score +=( 100 * combo);
         succesStrike++;
         ComboManager();
         UpdateUI();
@@ -59,10 +59,10 @@ public class ScoreManager : MonoBehaviour {
     private void ComboManager()
     {
         //increase the combo score every time the player do a succes strike of 3
-        if (succesStrike % 3 == 1 && combo < 5)
+        if (succesStrike/3 > 0.9f && combo < 5)
         { 
-            combo++;
-        succesStrike = 0;
+          combo++;
+          succesStrike = 0;
         }
 
     }
