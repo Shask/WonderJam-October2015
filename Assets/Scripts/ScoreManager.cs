@@ -42,7 +42,9 @@ public class ScoreManager : MonoBehaviour {
 
     public void MissPlacement()
     {
-        combo = 1;
+        Debug.Log("Desyncro");
+        if(combo>1)
+        combo -= 1;
         UpdateUI();
     }
     public void WrongInput()
@@ -54,8 +56,8 @@ public class ScoreManager : MonoBehaviour {
 
    private void ComboManager()
     {
-        //increase the combo score every time the player do a succes strike of 5
-        if (succesStrike % 5 == 1 && combo<=5)
+        //increase the combo score every time the player do a succes strike of 3
+        if (succesStrike % 3 == 1 && combo<=5)
             combo++;
        
     }
@@ -63,6 +65,6 @@ public class ScoreManager : MonoBehaviour {
     private void UpdateUI()
     {
         ScoreObj.text = "Score : " + score;
-        ComboObj.text = "Combo : " + combo;
+        ComboObj.text = "x" + combo;
     }
 }

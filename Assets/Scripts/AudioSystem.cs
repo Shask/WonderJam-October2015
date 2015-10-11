@@ -10,6 +10,7 @@ public class AudioSystem : MonoBehaviour {
     public GameObject Enemy; //Enemy prefab
 
     private DamierLoader damLoad;
+    private FloorRythm floorRythm;
 
     public float cooldown = 0.0f;//cooldown in between enemy spawn
 
@@ -31,6 +32,7 @@ public class AudioSystem : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         damLoad = GameObject.Find("FullDamier").GetComponent<DamierLoader>();
+        floorRythm = GameObject.Find("RythmBoxes").GetComponent<FloorRythm>();
         random = new System.Random();
         timerBPM = 1.0f / (BPM / 60.0f);
 
@@ -44,6 +46,7 @@ public class AudioSystem : MonoBehaviour {
        if (timerBPM <= 0.0f)
        {
             damLoad.switchDamier();
+            floorRythm.switchLane();
             timerBPM = 1.0f / (BPM / 60.0f);
        }
 
