@@ -39,7 +39,7 @@ public class AudioSystem : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate() {
+	void Update() {
 
         if (timerBPM > 0.0f)
             timerBPM -= Time.deltaTime;

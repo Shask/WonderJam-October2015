@@ -9,6 +9,8 @@ public class InputPlayer : MonoBehaviour {
 
     private ScoreManager scoreManager;
 
+    private Animator PlayerAnim;
+
     public float CDShoot = 0.2f; //CoolDown between every fire input
     private float TimerShoot = 0.0f; //current timer between fire input
 
@@ -20,6 +22,7 @@ public class InputPlayer : MonoBehaviour {
         RangeBox = GetComponent<BoxCollider>();
         EnemyOnRange = new ArrayList();
         scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
+        PlayerAnim = gameObject.GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -30,6 +33,7 @@ public class InputPlayer : MonoBehaviour {
 
         if ((Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2") || Input.GetButtonDown("Fire3") || Input.GetButtonDown("Fire4")) && TimerShoot<=0.0f)
         {
+            ApplyState();
             TimerShoot = CDShoot;
             if (EnemyOnRange.Count == 0)
             {
@@ -75,6 +79,34 @@ public class InputPlayer : MonoBehaviour {
         {
             EnemyOnRange.Remove(collision.gameObject);
         }
+    }
+    void ApplyState()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+          //  PlayerAnim.SetTrigger("PressA") ;
+            PlayerAnim.Play("HitA");
+           }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            //PlayerAnim.SetTrigger("PressX");
+            PlayerAnim.Play("HitX");
+        }
+
+
+        if (Input.GetButtonDown("Fire3"))
+        {
+           // PlayerAnim.SetTrigger("PressB");
+            PlayerAnim.Play("HitB");
+        }
+
+        if ( Input.GetButtonDown("Fire4"))
+        {
+            //PlayerAnim.SetTrigger("PressY");
+            PlayerAnim.Play("HitY");
+        }
+
     }
 
 }

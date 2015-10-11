@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Damier1
   - Damier2
+  - Purple
+  - Pink
   layers:
   - Default
   - TransparentFX

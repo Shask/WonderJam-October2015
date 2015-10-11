@@ -4,7 +4,8 @@ using System.Collections;
 public class FloorHitBox : MonoBehaviour {
 
     private string DangerTag;
-    private float timer;
+    public float timer;
+
     private bool overlaping = false;
     private AudioSystem audioSys;
     private ScoreManager scoreManager;
@@ -25,12 +26,15 @@ public class FloorHitBox : MonoBehaviour {
         {
             timer -= Time.deltaTime;
             if (timer <= 0.0f && tag == DangerTag)
-            { 
+            {
                 scoreManager.MissPlacement();
                 timer = ResetTimer();
             }
             else if (tag != DangerTag)
+            {
                 overlaping = false;
+                timer = ResetTimer();
+            }
 
         }
 	}
@@ -60,6 +64,6 @@ public class FloorHitBox : MonoBehaviour {
     //return the the time between every Beat divided by 2;
     float ResetTimer()
     {
-        return (1.0f / (audioSys.BPM * 60.0f))/2;
+        return (1.0f / (audioSys.BPM / 60.0f))/1.41f;
     }
 }
