@@ -10,7 +10,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
 
     public float timerdestroy = -1.0f;
 
-    private AudioSystem audioSys;
+    public AudioSystem audioSys;
     private ScoreManager scoreManager;
 
 
@@ -29,7 +29,7 @@ public class SimpleMoveEnemy : MonoBehaviour {
             timerdestroy -= Time.deltaTime;
 
         Vector3 scale = transform.localScale;
-        scale = new Vector3(1,1,1) * ( 1.5f + audioSys.debugvalue);
+        scale = new Vector3(1,1,1) * ( 1.8f + audioSys.debugvalue);
 
         // Condition that provide enemy to flicker (when the change of scale is rly low)
         if (scale.x - transform.localScale.x <= 0.05f && scale.x - transform.localScale.x >= -0.05f) { }
