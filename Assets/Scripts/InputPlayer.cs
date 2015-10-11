@@ -58,6 +58,7 @@ public class InputPlayer : MonoBehaviour {
                     enemy.GetComponent<SimpleMoveEnemy>().DestroyByBadinput();
                   //  Debug.Log("Wrong input");
                     EnemyOnRange.RemoveAt(0);
+                    ScoreManager.landedHit++;
                     //mauvaise input
                 }
             }

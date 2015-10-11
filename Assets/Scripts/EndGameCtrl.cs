@@ -8,7 +8,7 @@ public class EndGameCtrl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         GameObject.Find("Score").GetComponent<Text>().text = ScoreManager.score + "";
-        GameObject.Find("Landed Hit").GetComponent<Text>().text = ScoreManager.succesStrike + "";
+        GameObject.Find("Landed Hit").GetComponent<Text>().text = ScoreManager.landedHit + "";
         GameObject.Find("Rythm").GetComponent<Text>().text = (int)(ScoreManager.TimeOnbadTempo) + "";
         GameObject.Find("Wrong Attack").GetComponent<Text>().text = ScoreManager.NumberMissedButton + "";
         GameObject.Find("Pixel Destroyed").GetComponent<Text>().text = ScoreManager.NumberDestroyedPixel + "";
