@@ -6,6 +6,7 @@ using System;
 public class MenuCtrl : MonoBehaviour
 {
     private Text difficultyOutput;
+    public static string FinalDifficulty = "Tutoriel";
     private String[] difficultyLevels = { "Tutoriel", "Facile", "Moyen", "Difficile" };
     private Slider difficultySlider;
     private Button playButton;
@@ -16,6 +17,7 @@ public class MenuCtrl : MonoBehaviour
 
     void Start()
     {
+        //DontDestroyOnLoad(this);
         Cursor.visible = false;
 
         difficultyOutput = GameObject.Find("Difficulty Output").GetComponent<Text>();
@@ -33,5 +35,6 @@ public class MenuCtrl : MonoBehaviour
     public void AdjustDifficulty()
     {
         difficultyOutput.text = difficultyLevels[(int)difficultySlider.value];
+        FinalDifficulty = difficultyLevels[(int)difficultySlider.value];
     }
 }

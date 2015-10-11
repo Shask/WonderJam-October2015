@@ -36,6 +36,8 @@ public class AudioSystem : MonoBehaviour {
         random = new System.Random();
         timerBPM = 1.0f / (BPM / 60.0f);
 
+        Debug.Log(MenuCtrl.FinalDifficulty);
+
     }
 	
 	// Update is called once per frame
