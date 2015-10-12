@@ -33,7 +33,7 @@ public class SceneSetup : MonoBehaviour {
         d[1].songName = "Dirty_Ways.mp3";
         d[1].BPM = 130;
         d[1].Frequence = 9;
-        d[1].SpwnTh = 0.05f;
+        d[1].SpwnTh = 0.066f;
 
         d[2].songName = "Sonic_RoyalFree.mp3";
         d[2].BPM = 140;
@@ -67,7 +67,8 @@ public class SceneSetup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (!GetComponent<AudioSource>().isPlaying)
+            Application.LoadLevel(2);
 	}
     void SetAllBPM()
     {

@@ -17,7 +17,7 @@ public class FloorHitBox : MonoBehaviour {
         DangerTag = transform.parent.GetComponent<FloorRythm>().DangerTag;
         audioSys = GameObject.Find("Audio System").GetComponent<AudioSystem>();
         scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
-        BPM = 130;// GameObject.Find("Main Camera").GetComponent<SceneSetup>().BPM;
+        BPM = 280;// GameObject.Find("Main Camera").GetComponent<SceneSetup>().BPM;
 
     }
 
