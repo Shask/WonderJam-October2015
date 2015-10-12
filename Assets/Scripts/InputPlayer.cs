@@ -43,8 +43,29 @@ public class InputPlayer : MonoBehaviour {
             else
             {
                 //First enemy in the array would be the closest
-                GameObject enemy = (GameObject)EnemyOnRange[0];
-                EnemyID enemyID= enemy.GetComponent<EnemyID>();
+                float Closestdistance =999999;
+                int Closesti=0;
+                for (int i = 0; i < EnemyOnRange.Count; i++)
+                {
+                    GameObject temp = null;
+                    if ((GameObject)EnemyOnRange[i]!=null)
+                     temp = (GameObject) EnemyOnRange[i];
+                    if (temp != null)
+                    {
+                        float dist = Vector3.Distance(gameObject.transform.position, temp.gameObject.transform.position);
+                        if (dist < Closestdistance)
+                        {
+                            Closesti = i;
+                            Closestdistance = dist;
+                        }
+                    }
+                 }
+                if (Closesti != 0 && Closestdistance != 999999)
+                {
+                    GameObject enemy = (GameObject)EnemyOnRange[Closesti];
+                    EnemyID enemyID = enemy.GetComponent<EnemyID>();
+              
+
                 
                 if(Input.GetButtonDown(enemyID.input))
                 {
@@ -60,6 +81,9 @@ public class InputPlayer : MonoBehaviour {
                     EnemyOnRange.RemoveAt(0);
                     ScoreManager.landedHit++;
                     //mauvaise input
+                }
+                    Closesti = 0;
+                    Closestdistance = 999999;
                 }
             }
         }
@@ -80,6 +104,10 @@ public class InputPlayer : MonoBehaviour {
         {
             EnemyOnRange.Remove(collision.gameObject);
         }
+    }
+    void OnTriggerStay(Collider collision)
+    {
+
     }
     void ApplyState()
     {
