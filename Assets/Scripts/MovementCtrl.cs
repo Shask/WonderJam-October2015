@@ -16,8 +16,14 @@ public class MovementCtrl : MonoBehaviour {
     public float CooldownTimeBetweenLaneSwitch = 0.2f;
     private float CDMove = 0.0f;
 
+
+    public Animator animDisco;
+
+
     // Use this for initialization
     void Start () {
+        if (!MenuCtrl.FirstChar)
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = animDisco.runtimeAnimatorController;
 
     }
 

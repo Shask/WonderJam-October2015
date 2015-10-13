@@ -724,18 +724,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &545015899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 545015892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.26310921, y: 9.04676819, z: -.51033783}
-  m_Center: {x: .124655455, y: .329549998, z: -.355240434}
 --- !u!95 &545015900
 Animator:
   serializedVersion: 3
@@ -1442,6 +1430,14 @@ Prefab:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11478576, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: CDShoot
+      value: .170000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493578, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
+      propertyPath: animDisco
+      value: 
+      objectReference: {fileID: 9524260, guid: 904beefeca60f684e86e2603db300016, type: 2}
     m_RemovedComponents:
     - {fileID: 3347496, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
     - {fileID: 2339278, guid: 0e0f93104073b184eb6e3b3b6b5ceef0, type: 2}
@@ -2702,6 +2698,7 @@ MonoBehaviour:
   movementOrientation: Horizontal
   jumpHeight: .200000003
   CooldownTimeBetweenLaneSwitch: .200000003
+  animDisco: {fileID: 0}
 --- !u!114 &1891689705
 MonoBehaviour:
   m_ObjectHideFlags: 0

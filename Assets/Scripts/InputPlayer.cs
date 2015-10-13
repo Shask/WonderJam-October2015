@@ -45,6 +45,7 @@ public class InputPlayer : MonoBehaviour {
                 //First enemy in the array would be the closest
                 float Closestdistance =999999;
                 int Closesti=0;
+
                 for (int i = 0; i < EnemyOnRange.Count; i++)
                 {
                     GameObject temp = null;
@@ -60,7 +61,7 @@ public class InputPlayer : MonoBehaviour {
                         }
                     }
                  }
-                if (Closesti != 0 && Closestdistance != 999999)
+                if ( Closestdistance != 999999)
                 {
                     GameObject enemy = (GameObject)EnemyOnRange[Closesti];
                     EnemyID enemyID = enemy.GetComponent<EnemyID>();

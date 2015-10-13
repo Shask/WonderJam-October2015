@@ -7,9 +7,8 @@ public class FloorRythm : MonoBehaviour {
     private Transform[] childs;
 	// Use this for initialization
 	void Start () {
-        if (MenuCtrl.isPale)
-            DangerTag = "Pink";
-        childs = new Transform[transform.childCount];
+       
+            childs = new Transform[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
             childs[i] = transform.GetChild(i);
 
