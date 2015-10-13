@@ -12,8 +12,15 @@ public class MenuCtrl : MonoBehaviour
     private Slider difficultySlider;
     private Button playButton;
 
+    private bool LastplayerPick;
+
     void FixedUpdate()
     {
+        if (GameObject.Find("Pale").GetComponent<Toggle>().isOn != LastplayerPick)
+        {
+            LastplayerPick = !LastplayerPick;
+            FirstChar = !FirstChar;
+         }
     }
 
     void Start()
@@ -24,7 +31,8 @@ public class MenuCtrl : MonoBehaviour
         difficultyOutput = GameObject.Find("Difficulty Output").GetComponent<Text>();
         difficultySlider = GameObject.Find("Difficulty").GetComponent<Slider>();
         playButton = GameObject.Find("Play").GetComponent<Button>();
-        FirstChar = GameObject.Find("Pale").GetComponent<Toggle>().isOn;
+        LastplayerPick = GameObject.Find("Pale").GetComponent<Toggle>().isOn;
+        FirstChar = LastplayerPick;
         playButton.Select();
     }
 

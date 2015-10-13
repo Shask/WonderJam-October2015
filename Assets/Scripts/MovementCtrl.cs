@@ -22,7 +22,7 @@ public class MovementCtrl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (!MenuCtrl.FirstChar)
+        if (MenuCtrl.FirstChar)
             gameObject.GetComponent<Animator>().runtimeAnimatorController = animDisco.runtimeAnimatorController;
 
     }

@@ -10,6 +10,7 @@ TagManager:
   - Purple
   - Pink
   - Chunk
+  - TutoUI
   layers:
   - Default
   - TransparentFX

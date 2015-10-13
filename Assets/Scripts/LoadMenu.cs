@@ -10,4 +10,15 @@ public class LoadMenu : MonoBehaviour {
             Application.LoadLevel(0);
         }
 	}
+    void Start()
+    {
+        if(MenuCtrl.FinalDifficulty!= "Tutoriel")
+        {
+            GameObject[] TutoUI = GameObject.FindGameObjectsWithTag("TutoUI");
+            foreach(GameObject go in TutoUI)
+            {
+                go.SetActive(false);
+            }
+        }
+    }
 }
